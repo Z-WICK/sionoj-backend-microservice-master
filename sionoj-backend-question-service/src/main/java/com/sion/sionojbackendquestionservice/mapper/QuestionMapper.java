@@ -1,7 +1,7 @@
 package com.sion.sionojbackendquestionservice.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.sion.sionoj.model.entity.Question;
+import com.sion.sionojbackendmodel.model.entity.Question;
 
 /**
 * @author wick

@@ -3,11 +3,12 @@ package com.sion.sionojbackendquestionservice.service;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.sion.sionoj.model.dto.questionsubmit.QuestionSubmitAddRequest;
-import com.sion.sionoj.model.dto.questionsubmit.QuestionSubmitQueryRequest;
-import com.sion.sionoj.model.entity.QuestionSubmit;
-import com.sion.sionoj.model.entity.User;
-import com.sion.sionoj.model.vo.QuestionSubmitVO;
+import com.sion.sionojbackendmodel.model.dto.questionsubmit.QuestionSubmitAddRequest;
+import com.sion.sionojbackendmodel.model.dto.questionsubmit.QuestionSubmitQueryRequest;
+import com.sion.sionojbackendmodel.model.entity.QuestionSubmit;
+import com.sion.sionojbackendmodel.model.entity.User;
+import com.sion.sionojbackendmodel.model.vo.QuestionSubmitVO;
+
 
 /**
 * @author wick

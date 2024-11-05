@@ -3,9 +3,9 @@ package com.sion.sionojbackendquestionservice.service;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.sion.sionoj.model.dto.question.QuestionQueryRequest;
-import com.sion.sionoj.model.entity.Question;
-import com.sion.sionoj.model.vo.QuestionVO;
+import com.sion.sionojbackendmodel.model.dto.question.QuestionQueryRequest;
+import com.sion.sionojbackendmodel.model.entity.Question;
+import com.sion.sionojbackendmodel.model.vo.QuestionVO;
 
 import javax.servlet.http.HttpServletRequest;
 
