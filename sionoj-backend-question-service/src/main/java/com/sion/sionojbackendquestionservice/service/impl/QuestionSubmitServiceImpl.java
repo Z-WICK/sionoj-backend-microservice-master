@@ -19,8 +19,8 @@ import com.sion.sionojbackendmodel.model.vo.QuestionSubmitVO;
 import com.sion.sionojbackendquestionservice.mapper.QuestionSubmitMapper;
 import com.sion.sionojbackendquestionservice.service.QuestionService;
 import com.sion.sionojbackendquestionservice.service.QuestionSubmitService;
-import com.sion.sionojbackendserviceclient.service.JudgeService;
-import com.sion.sionojbackendserviceclient.service.UserService;
+import com.sion.sionojbackendserviceclient.service.JudgeFeignClient;
+import com.sion.sionojbackendserviceclient.service.UserFeignClient;
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.context.annotation.Lazy;
@@ -44,11 +44,11 @@ public class QuestionSubmitServiceImpl extends ServiceImpl<QuestionSubmitMapper,
     private QuestionService questionService;
 
     @Resource
-    private UserService userService;
+    private UserFeignClient userFeignClient;
 
     @Resource
     @Lazy
-    private JudgeService judgeService;
+    private JudgeFeignClient judgeService;
 
 
     /**
@@ -134,7 +134,7 @@ public class QuestionSubmitServiceImpl extends ServiceImpl<QuestionSubmitMapper,
         QuestionSubmitVO questionSubmitVO = QuestionSubmitVO.objToVo(questionSubmit);
         // 脱敏: 仅本人喝管理员能看见自己(提交 userId 和 登录用户id 不同) 提交的代码
         Long userId = loginUser.getId();
-        if(userId != questionSubmit.getUserId() && !userService.isAdmin(loginUser)){
+        if(userId != questionSubmit.getUserId() && !userFeignClient.isAdmin(loginUser)){
             questionSubmitVO.setCode(null);
         }
         return questionSubmitVO;
