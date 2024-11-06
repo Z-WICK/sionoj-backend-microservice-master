@@ -1,8 +1,25 @@
-  # Nacos 配置
+spring:
   cloud:
     nacos:
       discovery:
-        server-addr: 10.211.55.12:8848  # Nacos 服务器地址和端口
-      config:
-        server-addr: 10.211.55.12:8848  # 配置中心服务器地址（可选）
-
+        server-addr: 10.211.55.12:8848
+    gateway:
+      routes:
+        - id: sionoj-backend-user-service
+          uri: lb://sionoj-backend-user-service
+          predicates:
+            - Path=/api/user/**
+        - id: sionoj-backend-question-service
+          uri: lb://sionoj-backend-question-service
+          predicates:
+            - Path=/api/question/**
+        - id: sionoj-backend-judge-service
+          uri: lb://sionoj-backend-judge-service
+          predicates:
+            - Path=/api/judge/**
+  application:
+    name: sionoj-backend-gateway
+  main:
+    web-application-type: reactive
+server:
+  port: 8101

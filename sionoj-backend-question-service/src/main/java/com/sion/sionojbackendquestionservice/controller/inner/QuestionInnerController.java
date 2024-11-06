@@ -14,7 +14,8 @@ import javax.annotation.Resource;
  * @Date : 2024/11/6 16:32
  * 改服务仅仅内部调用,不给前端
  */
-@RestController("/inner")
+@RestController
+@RequestMapping("/inner")
 public class QuestionInnerController implements QuestionFeignClient {
 
     @Resource

@@ -33,7 +33,7 @@ import java.util.List;
  * 题目接口
  */
 @RestController
-@RequestMapping("/inner")
+@RequestMapping("/")
 @Slf4j
 public class QuestionController {
 
