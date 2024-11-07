@@ -1,5 +1,6 @@
 package com.sion.sionojbackendjudgeservice;
 
+import com.sion.sionojbackendjudgeservice.rabbitmq.InitRabbitMq;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
@@ -16,8 +17,9 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @EnableDiscoveryClient
 @EnableFeignClients(basePackages = {"com.sion.sionojbackendserviceclient.service"})
 public class SionojBackendJudgeServiceApplication {
-
     public static void main(String[] args) {
+        //项目启动前 初始化 RabbitMQ
+        InitRabbitMq.doInit();
         SpringApplication.run(SionojBackendJudgeServiceApplication.class, args);
     }
 

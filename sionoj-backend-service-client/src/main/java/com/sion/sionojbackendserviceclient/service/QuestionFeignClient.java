@@ -22,7 +22,7 @@ public interface QuestionFeignClient{
 
 
    @GetMapping("/question_submit/get/id")
-   QuestionSubmit getQuestionSubmitById(@RequestParam("questionSubmitId") Long questionSubmitId);
+   QuestionSubmit getQuestionSubmitById(@RequestParam("questionId") Long questionSubmitId);
 
 
    @PostMapping("/question_submit/update")

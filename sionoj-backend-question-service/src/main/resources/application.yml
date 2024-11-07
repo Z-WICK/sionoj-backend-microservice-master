@@ -41,6 +41,14 @@ spring:
 #      config:
 #        server-addr: 10.211.55.12:8848  # 配置中心服务器地址（可选）
 
+  rabbitmq:
+    host: 10.211.55.12
+    port: 5672
+    username: wick
+    password: wick1234
+    exchange: code_exchange
+
+
 server:
   address: 0.0.0.0
   port: 8103
